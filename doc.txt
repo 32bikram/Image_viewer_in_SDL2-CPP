@@ -1,0 +1,30 @@
+Installation -> sudo apt-get install libsdl2-dev (for UBUNTU)
+
+Compilation –> g++ -o myprogram myprogram.cpp `sdl2-config --cflags --libs`
+
+setting window size -> SDL_WINDOW_RESIZABLE = 0x00000020,          /**< window can be resized */
+
+Create a window->
+SDL_Window *name =  SDL_CreateWindow(const char *title,
+                              int x, int y, int w,
+                              int h, Uint32 flags);
+
+Surface->
+the file is first loaded into surface(temp loader) then its converted to texture(permanent  display) for viewing.
+edits are performed on  the surface texture is just for viewing.
+
+Updating the window surface->
+SDL_UpdateWindowSurface(my_win);
+
+getting a color->
+SDL_MapRGB(my_sur->format, 255, 0, 0); 
+mysur->format givess us the surface color storing format then using SDL_MapRGB
+we can get the color like red here in unit32 format.
+
+Filling the window with color->
+int SDL_FillRect(SDL_Surface * dst, const SDL_Rect * rect, Uint32 color);
+const SDL_Rect * rect  | the SDL_Rect structure representing the rectangle to fill, or NULL to 
+fill the entire surface.
+
+    SDL_FillRect(my_sur, NULL, color);  fills the whole window with color.
+Users\bikra\Downloads\Screenshot 2026-04-16 135610.ppm

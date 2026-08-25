@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 
+//works with ppm files only
 int main(){
     cout<<"please enter file path - ";
     string str;
